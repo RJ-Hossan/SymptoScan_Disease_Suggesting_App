@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:symptoscan/CreateAccount.dart';
+import 'package:symptoscan/HomeScreen.dart';
 import 'package:symptoscan/Methods.dart';
+import 'package:symptoscan/LoginScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: isLoading ? Center(
         child: Container(
           height: size.height/20,
-          width: size.width/20,
+          width: size.height/20,
           child: CircularProgressIndicator(),
         ),
       )
@@ -124,6 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
               setState(() {
                 isLoading = false;
               });
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => HomeScreen()));
             }
             else{
               print("Login Failed.");

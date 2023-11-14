@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:symptoscan/HomeScreen.dart';
 import 'package:symptoscan/Methods.dart';
 
 class CreateAccount extends StatefulWidget {
@@ -135,6 +136,8 @@ class _CreateAccountState extends State<CreateAccount> {
                     setState(() {
                       isLoading = false;
                     });
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => HomeScreen()));
                   }
                   else{
                     print("Account Creation Failed!!!");
