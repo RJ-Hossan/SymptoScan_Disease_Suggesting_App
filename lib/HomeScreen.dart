@@ -6,22 +6,41 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Screen"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 300.0, horizontal: 95.0),
-        child: TextButton(
-          onPressed: () => logOut(context),
-          child: Text("You have successfully logged out",
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-          ),
+
+      body: Container(),
+      bottomNavigationBar: Container(
+        height: size.height / 10,
+        width: size.width,
+        alignment: Alignment.center,
+        child: Container(
+          height: size.height/12,
+          width: size.width/1.1,
+          child: Row(
+            children: [
+              Container(
+                height: size.height/12,
+                width: size.width/1.27,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    )
+                  ),
+                ),
+              ),
+              IconButton(icon: Icon(Icons.send), onPressed: () {})
+            ],
           ),
         ),
       ),
+
     );
   }
 }

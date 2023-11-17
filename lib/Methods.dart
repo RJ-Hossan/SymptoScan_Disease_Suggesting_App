@@ -5,12 +5,21 @@ import 'package:symptoscan/LoginScreen.dart';
 Future<User?> createAccount(String name, String email, String password) async {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
+  //FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
   try{
     User? user = (await _auth.createUserWithEmailAndPassword(
         email: email, password: password)).user;
 
     if(user != null) {
       print("Account Creation Successful :)");
+
+     // await _firestore.collection('Users').doc(_auth.currentUser.uid).set({
+     //   "name": name,
+     //   "email": email,
+     //   "status": "Unavailable",
+     // });
+
       return user;
     }
     else{
