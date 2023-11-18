@@ -9,7 +9,7 @@ Future<List<Disease>> get_disease(String symptoms_text) async {
   const url =
       'https://api-inference.huggingface.co/models/shanover/symps_disease_bert_v3_c41';
   final response = await http.post(Uri.parse(url),
-      body: json.encode({'inputs': 'I have itching'}),
+      body: json.encode({'inputs': symptoms_text}),
       headers: {'Content-Type': 'application/json'});
   final responseData = json.decode(response.body);
   List<Disease> result = [];
