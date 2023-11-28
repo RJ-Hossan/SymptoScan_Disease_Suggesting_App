@@ -51,10 +51,13 @@ class _ChatPageState extends State<HomeScreen> {
         author: const types.User(
           id: 'system',
         ),
-        createdAt: DateTime.now().millisecondsSinceEpoch,
+        createdAt: DateTime
+            .now()
+            .millisecondsSinceEpoch,
         id: const Uuid().v4(),
         text:
-            'There is a possibility that you have ${res[i].disease}, around ${res[i].score}%',
+        'There is a possibility that you have ${res[i].disease}, around ${res[i]
+            .score}% and you can check out the following link - ',
       ));
     }
   }
