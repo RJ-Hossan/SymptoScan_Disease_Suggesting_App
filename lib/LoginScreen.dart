@@ -4,6 +4,8 @@ import 'package:symptoscan/HomeScreen.dart';
 import 'package:symptoscan/Methods.dart';
 import 'package:symptoscan/LoginScreen.dart';
 
+import 'HomeScreen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -126,11 +128,54 @@ class _LoginScreenState extends State<LoginScreen> {
               setState(() {
                 isLoading = false;
               });
+
+              // Show a dialog with an error message
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Login Failed'),
+                    content: Text('Please enter correct Email Address and Password.'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                        child: Text('OK'),
+                      ),
+                    ],
+                  );
+                },
+              );
             }
+
           });
         } else {
-          print("Please fillup the all details!");
+          print("Please fill up all details!");
+          setState(() {
+            isLoading = false;
+          });
+
+          // Show a dialog with an error message
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Validation Error'),
+                content: Text('Please fill up all details!'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Close the dialog
+                    },
+                    child: Text('OK'),
+                  ),
+                ],
+              );
+            },
+          );
         }
+
       },
       child: Container(
         height: size.height / 14,
@@ -160,8 +205,9 @@ class _LoginScreenState extends State<LoginScreen> {
             hintText: hintText,
             hintStyle: TextStyle(color: Colors.grey),
             border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
+            OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
       ),
     );
   }
 }
+
