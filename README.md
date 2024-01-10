@@ -91,17 +91,17 @@ The development of “SymptoScan” was a careful task, spanning from the concep
 ## 4. System Implementation
 The system implementation portion intends to represent some samples of the implemented app “SymptoScan”.
 
-![Splash Screen](assets/images/features/feature-1.png)
-<p style="text-align:center;">Figure 1: Splash Screens</p>
+![Splash Screen](assets/features/feature-1.png)
+<p align="center">Figure 1: Splash Screens</p>
 
-![Login Screen](assets/images/features/feature-2.png)
-<p style="text-align:center;">Figure 2: Login and SignUp Screens</p>
+![Login Screen](assets/features/feature-2.png)
+<p align="center">Figure 2: Login and SignUp Screens</p>
 
-![Disease Prediction Screen](assets/images/features/feature-3.png)
-<p style="text-align:center;">Figure 3: Disease Prediction Screens*</p>
+![Disease Prediction Screen](assets/features/feature-3.png)
+<p align="center">Figure 3: Disease Prediction Screens*</p>
 
-![Health Screen](assets/images/features/feature-4.png)
-<p style="text-align:center;">Figure 4: Health Tips Screens*</p>
+![Health Screen](assets/features/feature-4.png)
+<p align="center">Figure 4: Health Tips Screens*</p>
 
 ## 5. Conclusion
 SymptoScan marks the culmination of a visionary journey in redefining healthcare dynamics. The successful implementation of this app not only showcases the power of machine learning in predicting diseases but underscores our commitment to fostering a culture of proactive health management.
